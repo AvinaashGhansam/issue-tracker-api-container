@@ -11,11 +11,7 @@ public class IssueTracker {
     private String description;
     private Date createdAt;
     private Date updatedAt;
-    private enum Status {
-        OPEN,
-        IN_PROGRESS,
-        CLOSED
-    }
+    Status status;
 
     public IssueTracker() {}
     public IssueTracker(Integer id, String title, String description, Date createdAt, Date updatedAt, Status status ) {
@@ -24,6 +20,7 @@ public class IssueTracker {
         this.description = description;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.status = status;
     }
 
     public Integer getId() {
@@ -66,6 +63,10 @@ public class IssueTracker {
         this.updatedAt = updatedAt;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,4 +79,5 @@ public class IssueTracker {
     public int hashCode() {
         return Objects.hash(getId(), getTitle(), getDescription(), getCreatedAt(), getUpdatedAt());
     }
+
 }

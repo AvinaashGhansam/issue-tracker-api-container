@@ -1,3 +1,15 @@
-spring.application.name=issue-tracker-api-container
-spring.datasource.url=jdbc:mysql://localhost:3306/issue-tracker
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/issue-tracker  # MySQL JDBC URL
+    username: root                             # MySQL username
+    password: password                               # MySQL password
+    driver-class-name: com.mysql.cj.jdbc.Driver           # MySQL driver class
+    hikari:
+      minimum-idle: 5                                     # Minimum number of idle connections in the pool
+      maximum-pool-size: 20                               # Maximum number of connections in the pool
+      idle-timeout: 30000                                 # Connection idle timeout (in ms)
+      max-lifetime: 1800000                               # Maximum lifetime of a connection (in ms)
+      connection-timeout: 20000                           # Maximum wait time for a connection (in ms)
+      pool-name: MyHikariCP                               # Optional: custom name for the connection pool
+
 
